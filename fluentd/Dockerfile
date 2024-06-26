@@ -1,0 +1,7 @@
+# fluentd/Dockerfile
+FROM fluent/fluentd:v1.16-debian-1
+USER root
+RUN mkdir -p /fluentd/etc
+RUN ["gem", "install", "fluent-plugin-elasticsearch", "--no-document", "--version", "5.3.0"]
+USER fluent
+
